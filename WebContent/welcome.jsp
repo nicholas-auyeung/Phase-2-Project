@@ -9,8 +9,7 @@
 <body>
 	<div align="center">
 		<h2>Welcome ${name}</h2>
-		<div>Login successful at 
-		</div>
+		<div>${welcomeLogin}</div>
 		<span class="success">${dbSuccess}</span>
 	</div>
 	<a href="login.jsp">Logout</a>

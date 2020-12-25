@@ -35,7 +35,6 @@ public class RegisterController extends HttpServlet {
         super();
     }
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//query for username and email to check for already in database
 		Map<String, String> errors = new HashMap<String, String>();
 		HttpSession httpSession = request.getSession();
 		Session hibSession = HibernateUtility.getSession();
@@ -46,10 +45,10 @@ public class RegisterController extends HttpServlet {
 		List<User> data = hibSession.createQuery("from User").list();
 		for(User ob: data) {
 			if(ob.getUsername().compareTo(request.getParameter("username")) == 0) {
-				errors.put("usernameInUse", "Username is already in use");
+				errors.put("usernameInUse", "Username is already in use<br/>");
 			}
 			if(ob.getEmail().compareTo(request.getParameter("email")) == 0) {
-				errors.put("emailInUse", "Email is already in use");
+				errors.put("emailInUse", "Email is already in use<br/>");
 			}
 		}
 		if(request.getParameter("name").length() == 0) {

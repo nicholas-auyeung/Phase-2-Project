@@ -1,6 +1,7 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -34,6 +35,7 @@ public class LoginController extends HttpServlet {
 				if(ob.getPassword().compareTo(request.getParameter("password")) == 0){
 					found = true;
 					httpSession.setAttribute("name", ob.getName());
+					httpSession.setAttribute("welcomeLogin", "Login Successful at " + new Date() + "<br/>");
 					response.sendRedirect("welcome.jsp");
 				}
 			}

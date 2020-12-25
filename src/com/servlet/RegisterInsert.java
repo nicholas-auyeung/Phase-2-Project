@@ -1,6 +1,8 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,7 +36,7 @@ public class RegisterInsert extends HttpServlet {
 		User user = (User)httpSession.getAttribute("user");
 		hibSession.save(user);
 		tx.commit();
-		
+		httpSession.setAttribute("welcomeLogin", "Login Successful at " + new Date() + "<br/>");
 		httpSession.setAttribute("name", user.getName());
 		httpSession.setAttribute("dbSuccess", "Registered Successfully");
 		response.sendRedirect("welcome.jsp");
