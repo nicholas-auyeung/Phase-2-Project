@@ -50,41 +50,49 @@ This program is a servlet-based web application that displays a registration and
 
 14. Inside 'register' implement working form and set action to 'RegisterController'
 
-15. Add hyperlink to redirect to 'login' jsp page
+15. Add error messages
 
-16. Define 'RegisterController' servlet
+16. Add hyperlink to redirect to 'login' jsp page
 
-17. Inside 'RegisterController' start http session and check for all possible input errors
+17. Define 'RegisterController' servlet
 
-18. If input errors exist, redirect back to 'register' jsp page with error messages
+18. Inside 'RegisterController' start http session and check for all possible input errors
 
-19. If no input errors exist, create a User object with user input and set the object into the current http session
+19. If input errors exist, redirect back to 'register' jsp page with error messages
 
-20. Forward input data to 'RegisterInsert' servlet
+20. If no input errors exist, create a User object with user input and set the object into the current http session
 
-21. Define 'RegisterInsert' servlet
+21. Forward input data to 'RegisterInsert' servlet
 
-22. Inside 'RegisterInsert' obtain current http session and set up hibernate session and transaction
+22. Define 'RegisterInsert' servlet
 
-23. Retrieve the user object saved in the http session and save it into hibernate session and commit the transaction.
+23. Inside 'RegisterInsert' obtain current http session and set up hibernate session and transaction
 
-24. If success redirect to 'welcome' jsp page
+24. Retrieve the user object saved in the http session and save it into hibernate session and commit the transaction.
 
-25. Inside 'welcome' out appropriate registration success message and login date
+25. If success redirect to 'welcome' jsp page
 
-27. Implement logout button redirecting to 'login' jsp page
+26. Inside 'welcome' display appropriate registration success message and login date
 
-28. Inside 'login' implement working form and set action to 'LoginController'
+28. Implement logout button redirecting to 'login' jsp page
 
-29. Add hyperlink to redirect to 'register' jsp page
+29. Inside 'login' implement working form and set action to 'LoginController'
 
-30. Define 'LoginController' servlet
+30. Add error messages
 
-31. Inside 'LoginController' start http session and check for all possible input errors
+31. Add hyperlink to redirect to 'register' jsp page
 
-32. If input errors exist, redirect back to 'login' jsp page with error messages
+32. Define 'LoginController' servlet
 
-33. If no input errors exist, set login success and date message to http session and redirect to 'welcome' jsp page
+33. Inside 'LoginController' start http session and set up hibernate session
+
+34. Check for all possible input errors
+
+34. If input errors exist, redirect back to 'login' jsp page with error messages
+
+35. If no input errors exist, compare username and password to existing accounts in database
+
+37. If exists redirect to 'welcome' jsp page
 
 
 ## Usage
